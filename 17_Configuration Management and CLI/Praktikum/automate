@@ -1,0 +1,20 @@
+#!/bin/sh
+
+rootFolder="$1 at $(date)"
+aboutMe="$rootFolder/about_me"
+mySystem="$rootFolder/my_system_info"
+mkdir "$rootFolder"
+mkdir "$aboutMe"
+mkdir "$aboutMe/personal"
+mkdir "$aboutMe/professional"
+mkdir "$rootFolder/my_friends"
+mkdir "$mySystem"
+
+echo https://www.facebook.com/$2 > "$aboutMe/personal/facebook.txt"
+echo https://www.linkedin.com/$3 > "$aboutMe/professional/linkedin.txt"
+
+curl https://gist.githubusercontent.com/tegarimansyah/e91f335753ab2c7fb12815779677e914/raw/94864388379fecee450fde26e3e73bfb2bcda194/list%2520of%2520my%2520friends.txt > "$rootFolder/my_friends/list_of_my_friends.txt"
+
+echo "My username: $(whoami)" > "$mySystem/about_this_laptop.txt"
+echo "With host: $(uname -a)" >> "$mySystem/about_this_laptop.txt"
+echo "$(ping google.com -n 3)" > "$mySystem/internet_connection.txt"
