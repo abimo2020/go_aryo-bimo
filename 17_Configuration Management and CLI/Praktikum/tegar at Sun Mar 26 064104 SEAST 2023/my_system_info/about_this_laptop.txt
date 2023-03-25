@@ -1,0 +1,2 @@
+My username: LENOVO LEGION Y540
+With host: MINGW64_NT-10.0-22621 Amboksing 3.1.7-340.x86_64 2021-03-26 22:17 UTC x86_64 Msys

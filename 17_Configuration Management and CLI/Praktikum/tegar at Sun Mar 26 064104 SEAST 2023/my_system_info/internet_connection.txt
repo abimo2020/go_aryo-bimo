@@ -1,0 +1,10 @@
+
+Pinging google.com [216.239.38.120] with 32 bytes of data:
+Reply from 216.239.38.120: bytes=32 time=35ms TTL=54
+Reply from 216.239.38.120: bytes=32 time=272ms TTL=54
+Reply from 216.239.38.120: bytes=32 time=126ms TTL=54
+
+Ping statistics for 216.239.38.120:
+    Packets: Sent = 3, Received = 3, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 35ms, Maximum = 272ms, Average = 144ms
