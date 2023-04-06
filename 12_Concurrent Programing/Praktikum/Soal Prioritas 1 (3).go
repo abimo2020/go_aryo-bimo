@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"time"
 	// "time"
 )
 
@@ -18,10 +17,7 @@ func main() {
 
 		}
 	}()
-	go func() {
-		for i := 0; i < 10; i++ {
-			fmt.Println(<-ch)
-		}
-	}()
-	<-time.After(time.Second * 1)
+	for i := 0; i < 10; i++ {
+		fmt.Println(<-ch)
+	}
 }
