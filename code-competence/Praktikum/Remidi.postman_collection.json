@@ -1,0 +1,656 @@
+{
+	"info": {
+		"_postman_id": "659ecf6e-587e-4571-828a-2fabe7859255",
+		"name": "Remidi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Aryo Bimo\",\r\n    \"email\": \"abimo2018@gmail.com\",\r\n    \"username\": \"abimo2029\",\r\n    \"password\": \"123123\",\r\n    \"retype_password\": \"123123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "admin",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "default"
+								},
+								{
+									"key": "name",
+									"value": "aryo bimo",
+									"contentType": "image/jpeg",
+									"type": "text",
+									"disabled": true
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profil",
+			"item": [
+				{
+					"name": "Get User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2ODE5NDU3MTgsInVzZXJfaWQiOjF9.jbgPhZKeIoIOLSC3SN7tJl8nWWj9mLMdFXpEk9rBdFY",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Password",
+									"value": "123123",
+									"type": "default"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/profil",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"profil"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2ODE5NDU3MTgsInVzZXJfaWQiOjF9.jbgPhZKeIoIOLSC3SN7tJl8nWWj9mLMdFXpEk9rBdFY",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "password",
+									"value": "1231231",
+									"type": "default"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/profil",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"profil"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"123123\",\r\n    \"new_password\": \"1231231\",\r\n    \"retype_password\": \"1231231\",\r\n    \"name\": \"Arrr\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/profil",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"profil"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Create Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2ODE5NDU3MTgsInVzZXJfaWQiOjF9.jbgPhZKeIoIOLSC3SN7tJl8nWWj9mLMdFXpEk9rBdFY",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "kursi",
+									"type": "default"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/admin/category",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2ODE5NDU3MTgsInVzZXJfaWQiOjF9.jbgPhZKeIoIOLSC3SN7tJl8nWWj9mLMdFXpEk9rBdFY",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "kucing",
+									"type": "default"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/admin/category",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"category"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Item",
+			"item": [
+				{
+					"name": "Create Item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "lemari tua",
+									"type": "default"
+								},
+								{
+									"key": "description",
+									"value": "lemari udah lama ga dipake",
+									"type": "default"
+								},
+								{
+									"key": "stock",
+									"value": "2",
+									"type": "default"
+								},
+								{
+									"key": "price",
+									"value": "1000000",
+									"type": "default"
+								},
+								{
+									"key": "category_id",
+									"value": "2",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/items",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Items",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "lemari bubuk",
+									"type": "default"
+								},
+								{
+									"key": "description",
+									"value": "lemari udah lama ga dipake",
+									"type": "default"
+								},
+								{
+									"key": "stock",
+									"value": "2",
+									"type": "default"
+								},
+								{
+									"key": "price",
+									"value": "1000000",
+									"type": "default"
+								},
+								{
+									"key": "category_id",
+									"value": "1",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/items",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Item",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "kulkas",
+									"type": "default"
+								},
+								{
+									"key": "description",
+									"value": "kulkas putih",
+									"type": "default"
+								},
+								{
+									"key": "stock",
+									"value": "2",
+									"type": "default"
+								},
+								{
+									"key": "price",
+									"value": "1000000",
+									"type": "default"
+								},
+								{
+									"key": "category_id",
+									"value": "2",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/items/21b1db8a-a0fd-444f-9bc9-501e31caae31",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"items",
+								"21b1db8a-a0fd-444f-9bc9-501e31caae31"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Item By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "lemari bubuk",
+									"type": "default"
+								},
+								{
+									"key": "description",
+									"value": "lemari udah lama ga dipake",
+									"type": "default"
+								},
+								{
+									"key": "stock",
+									"value": "2",
+									"type": "default"
+								},
+								{
+									"key": "price",
+									"value": "1000000",
+									"type": "default"
+								},
+								{
+									"key": "category_id",
+									"value": "1",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/items/21b1db8a-a0fd-444f-9bc9-501e31caae31",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"items",
+								"21b1db8a-a0fd-444f-9bc9-501e31caae31"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Items By Param",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "lemari bubuk",
+									"type": "default"
+								},
+								{
+									"key": "description",
+									"value": "lemari udah lama ga dipake",
+									"type": "default"
+								},
+								{
+									"key": "stock",
+									"value": "2",
+									"type": "default"
+								},
+								{
+									"key": "price",
+									"value": "1000000",
+									"type": "default"
+								},
+								{
+									"key": "category_id",
+									"value": "1",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/items?keyword=kulkas",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"items"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "kulkas"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Items by category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "lemari bubuk",
+									"type": "default"
+								},
+								{
+									"key": "description",
+									"value": "lemari udah lama ga dipake",
+									"type": "default"
+								},
+								{
+									"key": "stock",
+									"value": "2",
+									"type": "default"
+								},
+								{
+									"key": "price",
+									"value": "1000000",
+									"type": "default"
+								},
+								{
+									"key": "category_id",
+									"value": "1",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/items/category/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"items",
+								"category",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete item",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "kulkas",
+									"type": "default"
+								},
+								{
+									"key": "description",
+									"value": "kulkas putih",
+									"type": "default"
+								},
+								{
+									"key": "stock",
+									"value": "2",
+									"type": "default"
+								},
+								{
+									"key": "price",
+									"value": "1000000",
+									"type": "default"
+								},
+								{
+									"key": "category_id",
+									"value": "2",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/items/21b1db8a-a0fd-444f-9bc9-501e31caae31",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"items",
+								"21b1db8a-a0fd-444f-9bc9-501e31caae31"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
